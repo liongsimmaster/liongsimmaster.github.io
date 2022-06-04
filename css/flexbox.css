@@ -1,0 +1,57 @@
+/* 20210510 Ason */
+/* common */
+body {
+    background-color: #d3d3d3;
+    background: url(../images/bg_2.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 30%;
+    margin: 0 auto;
+    /* margin: 0 auto; */
+}
+section {    
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-content: center; */
+}
+h1 {
+    width: 100%;
+    text-align: center;
+}
+h2 {
+    width: 100%;
+    text-align: center;
+}
+h6 {
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+p {
+}
+
+/* normal */
+.pic-intro {
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 70%;
+    }
+    section {
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-content: center; */
+    }
+}

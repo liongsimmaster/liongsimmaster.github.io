@@ -1,0 +1,769 @@
+/* 龍心法師 20220603 */
+/* common */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #d3d3d3;
+  background: url(../images/bg_2.jpg);
+  background-size: cover;
+  font-family: 微軟正黑體;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+body.change {
+  overflow: hidden;
+}
+h3 {
+  width: 30%;
+  /* background-color: rgba(0,0,0,0.05); */
+  font-size: 2rem;
+  font-weight: 700;
+  /* box-shadow: 0 1px 1px #999999; */
+  margin-top: 100px;
+  margin-bottom: 30px !important;
+  padding: 10px;
+}
+h3::before,
+h3::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  background-image: url(../images/bg_dragon.svg);
+  background-size: contain;
+  vertical-align: bottom;
+}
+h3::before {
+  margin-right: 5px;
+}
+h3::after {
+  /* transform: rotateY(180deg); */
+  margin-left: 5px;
+}
+h3.h3-first {
+  margin-top: 0;
+}
+h4 {
+  width: 40%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0 !important;
+  padding: 10px;
+}
+h5 {
+  font-weight: 700;
+  margin-top: 20px;
+}
+h6 {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+a:link,
+a:visited {
+  color: #000;
+}
+button:focus {
+  outline: none;
+}
+.margin-top-fix-1 {
+  margin-top: 10px !important;
+}
+.margin-top-fix-2 {
+  margin-top: 32px;
+}
+.margin-bottom-fix-1 {
+  margin-bottom: 30px;
+}
+.margin-fix {
+  margin: 0 !important;
+}
+.margin-right-fix {
+  margin-right: 0 !important;
+}
+.btn-fix {
+  text-align: center;
+  margin-right: 0 !important;
+}
+header {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.jumbotron {
+  background-color: transparent;
+  /* margin-top: -40px; */
+  margin-bottom: 0;
+  padding: 0;
+  padding-top: 5px;
+}
+.mainbtn {
+  display: inline-block;
+  text-align: right;
+  /* margin-top: -80px;
+    margin-bottom: 80px; */
+  margin-right: 10px;
+  position: fixed;
+  top: 10px;
+  right: 0;
+  z-index: 5;
+}
+.btn-container {
+  display: inline-block;
+  cursor: pointer;
+}
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+.bg-god {
+  padding-top: 20px;
+}
+
+/* 報名資料關閉按鈕  開始*/
+.btn-close:link {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  box-sizing: border-box;
+}
+.btn-close:hover {
+  color: gray;
+  text-decoration: none;
+}
+/* 報名資料關閉按鈕  結束*/
+
+/* 斗內支付方式 開始 */
+.icon-donate {
+  display: block;
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 5px #333);
+  margin: 0 auto 10px;
+}
+.icon-donate.first {
+  margin-top: 50px;
+}
+.icon-donate img {
+  width: 100%;
+}
+.first-donate {
+  margin-top: 40px;
+}
+.line-pay {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* 斗內支付方式 結束 */
+
+.mainmenu-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(166, 166, 166, 1);
+  background-image: url(../images/yuqing.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.mainmenu-container.change {
+  display: flex;
+}
+.mainmenu {
+  font-size: 1.5rem;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.mainmenu li {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.first-title {
+  margin-top: 80px;
+}
+.god-area {
+  animation-name: quanyin;
+  animation-duration: 4s;
+}
+.slogan {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+@keyframes quanyin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.about-pic-1 {
+  width: 40%;
+  margin-bottom: 5px;
+}
+.about-pic-1.liong-sim {
+  width: 10%;
+  margin-top: 40px;
+}
+.god-circle {
+  display: inline-block;
+}
+.god-circle::before {
+  content: "";
+  display: inline-block;
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 50%;
+  position: absolute;
+  top: -0.5rem;
+  left: calc(50% - 9.5rem);
+  z-index: -1;
+}
+.fill-data-link {
+  display: inline-block;
+  font-weight: 300;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.fill-data-link .disable a {
+  color: gray;
+}
+.fill-data-link .disable a:hover {
+  text-decoration: none;
+  cursor: default;
+}
+.fill-data-link li {
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.fill-data-link li i {
+  color: #900;
+  font-style: normal;
+}
+.fill-data-link .disable i {
+  color: #6c757d;
+}
+.go-fill-data {
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+.fa-angle-double-down {
+  color: rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+.donate {
+  /* margin-top: 50px; */
+  margin-bottom: 30px;
+}
+.donate li {
+  text-align: center;
+  margin-bottom: 30px;
+  /* margin-right: 20px; */
+}
+.fa-donate {
+  font-size: 18px;
+  /* color: #b2b2b2; */
+  /* filter: drop-shadow(0 0 5px #333); */
+  margin-bottom: 10px;
+}
+.donate .other-pay {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.logo-line,
+.logo-telegram,
+.logo-instagram {
+  width: 80px;
+  height: 80px;
+}
+.email {
+  margin-top: 30px;
+}
+.phone-number {
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+.flex-container {
+  display: flex;
+  /* height: 300px; */
+  justify-content: center;
+  align-items: center;
+}
+.query-form {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 1);
+  background-image: url(../images/bg_taiji.svg);
+  background-size: 160%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: left;
+  list-style: none;
+  padding: 60px 80px;
+  position: relative;
+  animation-name: example;
+  animation-duration: 1s;
+}
+.query-form-google {
+  width: 640px;
+  height: 80%;
+  position: relative;
+}
+.query-form-google iframe {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 20px;
+}
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.copyright {
+  background-color: #222;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 50px;
+  padding: 12px 0;
+}
+.copyright span {
+  font-size: 10px;
+  padding: 0 5px;
+}
+
+/* 服務費用 */
+.standard-charge {
+  width: 100%;
+}
+.service-charge {
+  width: 60%;
+  max-width: 500px;
+  border: 1px solid #999;
+  margin: 0 auto;
+}
+.service-charge tr {
+}
+.service-charge td {
+  width: 50%;
+  font-size: 1.15rem;
+  border: 1px solid #999;
+  padding-top: 8px;
+  padding-bottom: 7px;
+}
+.service-charge strong {
+  font-size: 1.2rem !important;
+}
+
+/* qrcode */
+.qrcode-line,
+.qrcode-telegram,
+.qrcode-instagram,
+.qrcode-wujihlk {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+}
+
+/* note */
+.note {
+  width: 20%;
+  text-align: left;
+  list-style: square;
+  margin: auto;
+}
+.note li {
+  font-size: 0.8rem;
+  color: #495057;
+  margin-bottom: 15px;
+}
+.note li > span {
+  font-size: 1rem;
+  color: black;
+}
+.my-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  padding: 6px 14px 6px;
+  border-radius: 50%;
+  font-size: 32px;
+  opacity: 0.7;
+}
+.my-btn:hover {
+  background-color: #555;
+  opacity: 0.8;
+}
+.my-btn .fas.fa-arrow-up {
+  font-size: 30px;
+}
+.service-item strong {
+  font-size: 1em;
+}
+.fill-data strong {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #900;
+}
+.fill-data b {
+  font-size: 1.1rem;
+  color: #222;
+}
+.phychic-item {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+i.square {
+  display: inline-block;
+  font-style: normal;
+  color: #212529;
+  vertical-align: text-bottom;
+}
+.modal-content {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.offcial-website {
+  margin: 60px auto 40px;
+}
+.btn-item,
+.btn-donate,
+.btn-credit-car {
+  display: inline-block;
+  background-color: #222;
+  border: 2px #222 solid;
+  border-radius: 30px;
+  color: #fff !important;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+.btn-item:hover,
+.btn-donate:hover,
+.btn-credit-car:hover {
+  text-decoration: none;
+  background-color: #555;
+  border: 2px #555 solid;
+}
+.btn-credit-car {
+  background-color: transparent;
+  border: 2px #333 solid;
+  color: #333 !important;
+  margin-top: 10px;
+}
+.btn-credit-car:hover {
+  background-color: transparent;
+  border: 2px #555 solid;
+  color: #555 !important;
+}
+.btn-donate.ecpay {
+  min-width: 200px;
+  margin-top: 5px;
+}
+.tel {
+  font-size: 1.3rem;
+}
+.offical-website {
+  font-size: 0.9rem;
+}
+.atm-transfer span {
+  display: block;
+}
+.atm-transfer span:last-child {
+  margin-top: 10px;
+}
+/* .atm-transfer p:last-child {
+  text-align: left;
+} */
+.atm-bank {
+  padding-bottom: 10px;
+}
+
+
+/* rwd */
+@media only screen and (max-width: 1440px) {
+  .service-charge {
+    max-width: 420px;
+  }
+  .note {
+    width: 30%;
+  }
+  .about-pic-1 {
+    width: 50%;
+  }
+  .about-pic-1.liong-sim {
+    width: 20%;
+    /* margin-top: 40px; */
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .note {
+    width: 50%;
+  }
+  .my-btn:hover {
+    background-color: gray;
+    opacity: 0.5;
+  }
+  .btn-item:hover,
+  .btn-donate:hover {
+    background-color: #222;
+    border: 2px #222 solid;
+  }
+  /* .about-pic-1 {
+    width: 30%;
+  }
+  .about-pic-1.liong-sim {
+    width: 20%; */
+  /* margin-top: 40px; 
+  }*/
+}
+@media only screen and (max-width: 991px) {
+  /* html {
+        scroll-behavior: auto;
+    } */
+  h3 {
+    width: 40%;
+  }
+  h4 {
+    width: 20%;
+  }
+  .donate li {
+    margin-right: 10px;
+  }
+  /* .about-pic-1 {
+    width: 30%;
+  }
+  .about-pic-1.liong-sim {
+    width: 20%; */
+  /* margin-top: 40px; 
+  }*/
+  .note {
+    width: 60%;
+  }
+  .god-circle::before {
+    width: 15rem;
+    height: 15rem;
+    top: -0.5rem;
+    left: calc(50% - 7.2rem);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 1rem;
+  }
+  .first-title {
+    margin-top: 20px;
+  }
+  h3,
+  h4 {
+    width: auto;
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 40px;
+    margin-bottom: 10px !important;
+  }
+  .first-h3 {
+    margin-top: 20px;
+  }
+  h3::before,
+  h3::after {
+    width: 35px;
+    height: 28px;
+  }
+  p {
+    padding-right: 36px !important;
+    padding-left: 36px !important;
+  }
+  .my-btn {
+    bottom: 100px;
+    right: 10px;
+  }
+  .about-pic-1 {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .about-pic-1.liong-sim {
+    width: 40%;
+    margin-top: 20px;
+  }
+  .god-circle::before {
+    width: 10rem;
+    height: 10rem;
+    top: -0.5rem;
+    left: calc(50% - 4.8rem);
+  }
+  .slogan {
+    font-size: 1.1rem;
+  }
+  .mainmenu-container {
+    background-size: cover;
+  }
+  .mainbtn {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .mainmenu {
+    font-size: 1.3rem;
+  }
+  .service-charge {
+    width: 74%;
+  }
+  .service-charge td {
+    font-size: 1rem;
+  }
+  .note {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 30px;
+  }
+  .note li > span {
+    font-size: 0.9rem;
+  }
+  .query-form {
+    margin: 0 15px;
+    padding: 15px 30px;
+  }
+  .query-form-google {
+    width: 90%;
+    height: 70%;
+  }
+  .btn-close:link {
+    top: -55px;
+    right: -10px;
+  }
+  .fill-data-link {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+  .donate {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-right: 36px !important;
+    padding-left: 36px !important;
+  }
+  .donate .other-pay {
+    margin-top: 35px;
+    margin-bottom: 10px;
+  }
+  .offcial-website {
+    margin: 20px auto 10px;
+  }
+  .icon-donate {
+    margin-top: 40px;
+  }
+  .phychic-item {
+    font-size: 1.2rem;
+  }
+  .fill-data-link li {
+    float: none;
+  }
+  .tel {
+    font-size: 1.1rem;
+  }
+  h6 {
+    font-size: 1.2rem;
+  }
+  .offical-website {
+    font-size: 0.8rem;
+  }
+  .copyright {
+    font-size: 11px;
+  }
+  .copyright i {
+    font-size: 10px;
+  }
+  .service-charge strong {
+    font-size: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .god-circle::before {
+    width: 8rem;
+    height: 8rem;
+    top: -0.4rem;
+    left: calc(50% - 3.8rem);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .god-circle::before {
+    width: 6rem;
+    height: 6rem;
+    top: -0.5rem;
+    left: calc(50% - 3rem);
+  }
+  .url-website {
+    font-size: 14px;
+  }
+  .fill-data-link {
+    font-size: 1rem;
+  }
+  .query-form,
+  .query-form b {
+    font-size: 0.9rem;
+  }
+  h6 {
+    font-size: 1.1rem;
+  }
+  .service-charge td {
+    font-size: 0.9rem;
+  }
+}

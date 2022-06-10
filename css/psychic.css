@@ -1,4 +1,4 @@
-/* 龍心法師 20220603 */
+/* 龍心法師 20220610 */
 /* common */
 html {
   scroll-behavior: smooth;
@@ -134,7 +134,7 @@ header {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 .bg-god {
-  padding-top: 20px;
+  padding-top: 100px;
 }
 
 /* 報名資料關閉按鈕  開始*/
@@ -629,6 +629,9 @@ i.square {
   p {
     padding-right: 36px !important;
     padding-left: 36px !important;
+  }
+  .bg-god {
+    padding-top: 50px;
   }
   .my-btn {
     bottom: 100px;

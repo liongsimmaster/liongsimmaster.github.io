@@ -1,2 +1,2 @@
 # liongsimmaster.github.io
-龍心法師_玉清元始天尊
+阿貿師兄_玉清元始天尊

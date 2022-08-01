@@ -210,8 +210,8 @@ header {
   margin-top: 80px;
 }
 .god-area {
-  animation-name: quanyin;
-  animation-duration: 4s;
+  /* animation-name: quanyin;
+  animation-duration: 4s; */
 }
 .slogan {
   font-size: 1.25rem;
